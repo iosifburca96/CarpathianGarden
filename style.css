@@ -28,7 +28,7 @@ header {
 	display: flex;
 	padding: 32px 120px;
 	justify-content: space-between;
-	align-items: center;
+	align-items: first baseline;
 }
 
 .logo a img {
@@ -45,12 +45,7 @@ li {
 	margin: 0 32px;
 }
 
-header div .reserve-btn {
-	color: var(--green);
-}
-
-ul li a,
-.reserve-btn {
+ul li a {
 	text-decoration: none;
 	color: var(--white);
 	font-size: 16px;
@@ -62,8 +57,7 @@ ul li a,
 	z-index: 2;
 }
 
-ul li a::before,
-.reserve-btn::before {
+ul li a::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -77,8 +71,7 @@ ul li a::before,
 	border-radius: 50%;
 }
 
-ul li a:hover,
-.reserve-btn:hover {
+ul li a:hover {
 	color: var(--gold);
 	transition: 0.3s;
 	border: 1px solid transparent;
@@ -86,8 +79,7 @@ ul li a:hover,
 	padding: 10px;
 }
 
-ul li a:hover::before,
-.reserve-btn:hover::before {
+ul li a:hover::before {
 	background-color: var(
 		--yellow-bg
 	); /* Set the background color to your body background color */
@@ -161,6 +153,11 @@ button {
 	font-size: 20px;
 	line-height: 175%;
 	font-weight: 700;
+    transition: .3s;
+}
+button:hover {
+    background-color: var(--green);
+    transition: .3s;
 }
 .hero-content__image {
 	position: relative;
@@ -423,3 +420,90 @@ button {
     z-index: 1;
  }
 
+
+ /*     MENU    */
+
+ .menu {
+    padding: 48px 240px;
+    border: 1px solid red;
+    background-image: url('./about-us-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+ }
+ .menu h1 {
+    font-family: 'Cormorant Upright', serif;
+	font-size: 60px;
+	color: var(--gold);
+    padding: 20px 0 20px 0;
+    text-align: center;
+ }
+ .menu h3 {
+    font-family: 'Cormorant Upright', serif;
+	font-size: 28px;
+    text-align: center;
+ }
+
+ .menu-selectors {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid green;
+    background-color: var(--gold);
+    border-radius: 10px;
+ }
+ .menu-selectors div {
+    color: var(--black);
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    flex: 1;
+    text-align: center;
+    padding: 24px;
+    transition: .5s;
+ }
+ .menu-selectors div:hover {
+    background-color: var(--green);
+    transition: .3s;
+ }
+ .selector-foods {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+ }
+ .selector-drinks {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+ }
+
+ .menu-items-container {
+    border: 1px solid blue;
+    border-radius: 10px;
+ }
+
+ .food-menu-items, 
+ .drink-menu-items {
+    display: flex;
+    flex-flow: row wrap; 
+    justify-content: center;
+    align-items: baseline;
+ }
+ .menu-items {
+    display: flex;
+    flex-flow: column;
+    justify-content: first baseline;
+    align-items: center;
+    flex-basis: calc(25% - 24px);
+    margin: 12px;
+    gap: 5px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+ }
+ .menu-item-img-container {
+    
+ }
+ .menu-item-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+ }
