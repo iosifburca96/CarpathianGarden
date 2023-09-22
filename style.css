@@ -27,6 +27,7 @@ body {
 header {
 	display: flex;
 	padding: 32px 120px;
+    height: 15vh;
 	justify-content: space-between;
 	align-items: first baseline;
 }
@@ -91,6 +92,7 @@ ul li a:hover::before {
 
 .hero {
 	padding: 48px 120px;
+    height: 85vh;
 	display: grid;
 	grid-template-columns: 80px 1fr 80px;
 	column-gap: 60px;
@@ -157,6 +159,24 @@ button {
 }
 button:hover {
 	background-color: var(--green);
+	transition: 0.3s;
+}
+.reserve-btn {
+    text-decoration: none;
+    background-color: var(--gold);
+    color: var(--black);
+	padding: 8px 32px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	font-family: 'Cormorant Upright', serif;
+	font-size: 20px;
+	line-height: 175%;
+	font-weight: 700;
+	transition: 0.3s;
+}
+.reserve-btn:hover {
+    background-color: var(--green);
 	transition: 0.3s;
 }
 .hero-content__image {
@@ -239,10 +259,12 @@ button:hover {
 }
 
 /* ABOUT US */
+
 .about-us {
 	background-image: url('./about-us-bg.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
+    height: 100vh;
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-between;
@@ -326,6 +348,8 @@ button:hover {
 	opacity: 0.2;
 }
 
+/* SERVICES */
+
 .services {
 	padding: 48px 240px;
 }
@@ -403,13 +427,15 @@ button:hover {
 
 .menu {
 	padding: 48px 240px;
-	border: 1px solid red;
+    background-image: url('./img/other/background10.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 .menu h1 {
 	font-family: 'Cormorant Upright', serif;
-	font-size: 60px;
+	font-size: 50px;
 	color: var(--gold);
-	padding: 20px 0 20px 0;
+	padding: 16px 0 16px 0;
 	text-align: center;
 }
 .menu h3 {
@@ -423,6 +449,8 @@ button:hover {
 	flex-flow: row nowrap;
 	justify-content: space-around;
 	align-items: center;
+    width: 50%;
+    margin: 0 auto;
 	border: 1px solid green;
 	background-color: var(--gold);
 	border-radius: 10px;
@@ -431,10 +459,10 @@ button:hover {
 	color: var(--black);
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 700;
-	font-size: 24px;
+	font-size: 20px;
 	flex: 1;
 	text-align: center;
-	padding: 24px;
+	padding: 16px;
 	transition: 0.5s;
 }
 .menu-selectors div:hover {
@@ -451,7 +479,6 @@ button:hover {
 }
 
 .menu-items-container {
-	border: 1px solid blue;
 	border-radius: 10px;
 }
 
@@ -460,27 +487,42 @@ button:hover {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
-	align-items: baseline;
+	align-items: stretch;
 }
 .menu-items {
 	display: flex;
 	flex-flow: column;
-	justify-content: first baseline;
-	align-items: center;
+	justify-content: space-between;
+    align-content: stretch;
 	flex-basis: calc(25% - 24px);
 	margin: 12px;
+    padding: 8px;
 	gap: 5px;
 	text-align: center;
 	font-family: 'Open Sans', sans-serif;
-	border: 1px solid var(--gold);
+	/*border: 1px solid var(--black);*/
 	border-radius: 10px;
+    background-color: rgba(12, 11, 8, .5);
+    transition: .3s ease;
 }
+.menu-items:hover {
+    transform: scale(1.1);
+    transition: .5s ease;
+}   
 
 .menu-item-img-container img {
-	width: 50%;
-	height: 50%;
+	width: 8rem;
+	height: 8rem;
+    margin: 20px;
 	object-fit: cover;
 	border-radius: 10px;
+}
+.menu-item-info {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    
 }
 
 .drink-menu-items {
