@@ -2,6 +2,7 @@ const selectorFoods = document.querySelector('.selector-foods');
 const selectorDrinks = document.querySelector('.selector-drinks');
 const foodMenu = document.querySelector('.food-menu-items');
 const drinkMenu = document.querySelector('.drink-menu-items');
+const menu = document.getElementById('menu');
 
 selectorFoods.addEventListener('click', () => switchMenu(selectorFoods));
 selectorDrinks.addEventListener('click', () => switchMenu(selectorDrinks));
@@ -10,9 +11,11 @@ function switchMenu(clickedElement) {
     if(clickedElement === selectorFoods && getComputedStyle(foodMenu).display === 'none') {
         drinkMenu.style.display = 'none';
         foodMenu.style.display = 'flex';
+        menu.style.backgroundImage = "url('./img/other/background10.png')";
     } else if (clickedElement === selectorDrinks && getComputedStyle(drinkMenu).display === 'none') {
         foodMenu.style.display = 'none';
         drinkMenu.style.display = 'flex';
+        menu.style.backgroundImage = "url('./img/other/background3.jpeg')";
     } else {
         //do nothing
     }

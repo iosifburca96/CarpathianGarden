@@ -427,9 +427,10 @@ button:hover {
 
 .menu {
 	padding: 48px 240px;
-    background-image: url('./img/other/background10.jpg');
+    background-image: url('./img/other/background10.png');
 	background-size: cover;
 	background-repeat: no-repeat;
+    transition: 1s ease;
 }
 .menu h1 {
 	font-family: 'Cormorant Upright', serif;
@@ -506,7 +507,7 @@ button:hover {
     transition: .3s ease;
 }
 .menu-items:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     transition: .5s ease;
 }   
 
