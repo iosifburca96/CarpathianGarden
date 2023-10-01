@@ -6,6 +6,7 @@
 
 :root {
 	--black: #0c0b08;
+    --black-25: #4d4633;
 	--white: #ffffff;
 	--gray: #aaaaaa;
 	--green: #91e439;
@@ -394,6 +395,7 @@ button:hover {
 	justify-content: space-between;
 	align-items: stretch;
 	gap: 32px;
+
 }
 .services__categories .categories {
 	display: flex;
@@ -401,16 +403,43 @@ button:hover {
 	justify-content: space-around;
 	align-items: center;
 	gap: 24px;
-	border: 1px solid var(--gold);
+	border: 1px solid var(--black-25);
 	border-radius: 10px;
 	padding: 20px;
 	position: relative;
+    flex-basis: 33%;
+    height: 300px;
+    transition: transform .4s ease, background-color .4s ease;
+}
+.services__categories .categories:hover {
+    transform: scale(1.05);
+    background-color: var(--black-25);
+    transition: transform .7s ease, background-color .7s ease;
+}
+.services__categories .categories:hover .icon {
+    width: 40px;
+    margin-left: 20px;
+    transition: transform .7s ease, margin-left .7s ease, width .7s ease;
+    
+}
+.services__categories .categories:hover .divider {
+    transform: translateY(140px); 
+    transition: transform .7s ease;
+}
+.services__categories .categories:hover h2 {
+    transform: translateY(-130px) translateX(30px);
+    transition: transform .7s ease;
+}
+.services__categories .categories:hover p {
+    display: block;
+    transform: translateY(-100px);
 }
 
 .services__categories .categories h2 {
 	font-family: 'Cormorant Upright', serif;
 	font-size: 28px;
 	color: var(--gold);
+    transition: .4s ease;
 }
 .services__categories .categories p {
 	font-family: 'Open Sans', sans-serif;
@@ -418,9 +447,21 @@ button:hover {
 	line-height: 175%;
 	letter-spacing: 0.6px;
 	color: var(--gray);
+    text-align: center;
+    display: none;
+}
+.services__categories .categories .divider {
+    width: 75%;
+    height: 16px;
+    background-color: var(--green);
+    border-radius: 5px;
+    transition: .4s ease;
 }
 .services__categories .categories .icon {
 	width: 60px;
+    align-self: flex-start;
+    margin-left: calc(50% - 30px);
+    transition: transform .4s ease, margin-left .4s ease, width .4s ease;
 }
 
 /*     MENU    */
