@@ -4,15 +4,17 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<title>Carpathian Castle Restaurant</title>
-		<link rel="icon" href="./logo-green.png" />
-		<link rel="stylesheet" href="style.css" />
-		<link
-			href="https://fonts.googleapis.com/css?family=Cormorant Upright"
-			rel="stylesheet"
+		<title>Carpathian Garden | Fine Dining in the Mountains, Alba Iulia</title>
+		<meta
+			name="description"
+			content="Carpathian Garden is a seasonal, ingredient-led restaurant on a candlelit mountain terrace above Alba Iulia, Romania. Reserve your table."
 		/>
+		<link rel="icon" href="./img/brand/logo-green.png" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css?family=Open Sans"
+			href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap"
 			rel="stylesheet"
 		/>
 		<link
@@ -21,28 +23,48 @@
 		/>
 	</head>
 	<body>
-		<header>
+		<header id="siteHeader">
 			<div class="logo">
-				<a href="#">
-					<img src="./logo-green.png" alt="logo" />
+				<a href="#home" aria-label="Carpathian Garden, back to top">
+					<img src="./img/brand/logo-green.png" alt="Carpathian Garden" />
 				</a>
 			</div>
-			<nav>
+			<nav id="primary-nav">
 				<ul>
 					<li><a href="#home">Home</a></li>
-					<li><a href="#about-us">About us</a></li>
-					<li><a href="#services">Services</a></li>
+					<li><a href="#about-us">Our Story</a></li>
+					<li><a href="#services">Why Us</a></li>
 					<li><a href="#menu">Menu</a></li>
 					<li><a href="#contact">Contact</a></li>
 				</ul>
 			</nav>
-			<div>
-				<a class="reserve-btn" href="#book"> Make A Reservation </a>
+			<div class="header-actions">
+				<a class="btn btn--primary btn--sm" href="#book">Reserve A Table</a>
+				<button
+					class="nav-toggle"
+					id="navToggle"
+					type="button"
+					aria-label="Toggle navigation menu"
+					aria-expanded="false"
+					aria-controls="primary-nav"
+				>
+					<span></span><span></span><span></span>
+				</button>
 			</div>
 		</header>
 
 		<section class="hero" id="home">
-			<div class="hashtags">
+			<div class="hero-bg">
+				<img
+					src="./img/hero/terrace-view.jpg"
+					alt=""
+					class="hero-bg__img"
+					fetchpriority="high"
+				/>
+				<div class="hero-bg__scrim"></div>
+			</div>
+
+			<div class="hashtags" aria-hidden="true">
 				<p>#food</p>
 				<p>#bar</p>
 				<p>#nature</p>
@@ -50,24 +72,19 @@
 				<p>#garden</p>
 			</div>
 
-			<div class="hero-content">
+			<div class="hero-content reveal">
 				<div class="hero-content__text">
-					<h3>Chase the new flavour</h3>
-					<h1>The Key To Fine Dining</h1>
-					<p>
-						Lorem ipsum dolor, sit amet consectetur adipisicing
-						elit. Corrupti qui obcaecati nobis, porro eum
-						voluptatibus laborum veniam veritatis similique? Nam
-						labore dignissimos itaque, excepturi magnam assumenda
-						adipisci eius in ea.
+					<p class="eyebrow">Fine dining in the Carpathian mountains</p>
+					<h1>Where the Mountains Set the Table</h1>
+					<p class="hero-content__lead">
+						Seasonal, ingredient-led cooking served on a candlelit
+						terrace above the Alba Iulia foothills. Forty minutes
+						from the city, a world away from everything else.
 					</p>
-					<button type="button">Explore Our Menu!</button>
-				</div>
-
-				<div class="hero-content__image">
-					<div class="rectangle rectangle1"></div>
-					<div class="rectangle rectangle2"></div>
-					<div><img src="./hero-img1.jpg" alt="" /></div>
+					<div class="hero-content__actions">
+						<a class="btn btn--primary" href="#book">Reserve A Table</a>
+						<a class="btn btn--ghost" href="#menu">View Our Menu</a>
+					</div>
 				</div>
 			</div>
 
@@ -84,373 +101,603 @@
 			</div>
 		</section>
 
+		<section class="trust-bar" data-stagger>
+			<div class="trust-item reveal">
+				<span class="trust-item__stat" data-count="2014" data-grouping="false">0</span>
+				<span class="trust-item__label">Year established</span>
+			</div>
+			<div class="trust-item reveal">
+				<span class="trust-item__stat"><span data-count="100">0</span>%</span>
+				<span class="trust-item__label">Locally sourced ingredients</span>
+			</div>
+			<div class="trust-item reveal">
+				<span class="trust-item__stat"><span data-count="4.9" data-decimals="1">0</span><small>/5</small></span>
+				<span class="trust-item__label">Average guest rating</span>
+			</div>
+			<div class="trust-item reveal">
+				<span class="trust-item__stat" data-count="38">0</span>
+				<span class="trust-item__label">Seats on the terrace</span>
+			</div>
+		</section>
+
 		<section class="about-us" id="about-us">
-			<article class="about-us__article">
-				<div class="hero-content__image">
+			<article class="about-us__article reveal">
+				<div class="framed-image">
 					<div class="rectangle rectangle1"></div>
 					<div class="rectangle rectangle2"></div>
-					<div><img src="./chef.png" alt="" /></div>
+					<div><img src="./img/story/chef.jpg" alt="Chef Kevin Luo" loading="lazy" /></div>
 				</div>
 			</article>
 
-			<article class="history__article">
-				<h3>Chef's Word</h3>
-				<h1>About Us</h1>
+			<article class="history__article reveal">
+				<p class="eyebrow">Chef's Word</p>
+				<h2>Our Story</h2>
 				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Ratione aspernatur vitae voluptates tempore fuga aliquid.
-					Doloribus sequi corporis optio sunt excepturi, cum
-					veritatis, error vitae nesciunt dicta voluptatibus
-					repudiandae beatae?
+					Carpathian Garden began with a simple idea: the best meal
+					in Romania shouldn't need a stiff white tablecloth to feel
+					special. Just good light, good company, and ingredients
+					that traveled less than a mile to reach your plate.
 				</p>
-				<h4 class="name">Kevin Luo</h4>
-				<h4 class="role">Chef & Founder</h4>
-				<h4 class="signature">Kevin Luo.</h4>
-				<!-- <button type="button">Show More</button> -->
+				<p>
+					Chef Kevin Luo trained in Lyon and Tokyo before coming
+					home to the mountains above Alba Iulia, and every dish
+					here still carries that journey: French technique,
+					Japanese restraint, and the wild garlic, mushrooms, and
+					trout that grow right outside our kitchen door. We built
+					our terrace into the hillside rather than against it, so
+					every table looks out over the same forest that feeds it.
+				</p>
+				<p class="name">Kevin Luo</p>
+				<p class="role">Chef &amp; Founder</p>
+				<p class="signature">Kevin Luo.</p>
 			</article>
 		</section>
 
-		<section class="services" id="services">
-			<div class="why-us">
-				<article class="services__article">
-					<h3>Services</h3>
-					<h1>Why choose us?</h1>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Eius voluptatem autem odio accusantium, magnam
-						voluptates sapiente impedit asperiores, fugit facere,
-						dignissimos aliquam! Expedita ad quaerat laboriosam
-						blanditiis facere doloribus inventore?
+		<section class="dishes" id="dishes">
+			<div class="section-heading reveal">
+				<p class="eyebrow">Taste</p>
+				<h2>Signature Dishes</h2>
+				<p class="section-heading__sub">
+					Three plates our regulars order before they've even
+					opened the menu.
+				</p>
+			</div>
+
+			<div class="dishes-grid" data-stagger>
+				<article class="dish-card reveal">
+					<div class="dish-card__img">
+						<img
+							src="./img/story/signature-filet-beetroot.jpg"
+							alt="Carpathian beef fillet with potato terrine and wild beetroot"
+							loading="lazy"
+						/>
+					</div>
+					<h3 class="dish-card__title">Carpathian Beef Fillet</h3>
+					<p class="dish-card__desc">
+						Grass-fed fillet, potato terrine, wild beetroot, red
+						wine jus.
 					</p>
 				</article>
-				<article class="services__image">
-					<div class="hero-content__image">
-						<div class="rectangle rectangle1"></div>
-						<div class="rectangle rectangle2"></div>
-						<div><img src="./restaurant.png" alt="" /></div>
+
+				<article class="dish-card reveal">
+					<div class="dish-card__img">
+						<img
+							src="./img/story/miso-salmon.jpg"
+							alt="Miso-glazed salmon with citrus butter and mountain herbs"
+							loading="lazy"
+						/>
 					</div>
+					<h3 class="dish-card__title">Miso-Glazed Salmon</h3>
+					<p class="dish-card__desc">
+						Slow-roasted salmon, citrus butter, foraged mountain
+						herbs.
+					</p>
+				</article>
+
+				<article class="dish-card reveal">
+					<div class="dish-card__img">
+						<img
+							src="./img/story/signature-filet-spatzle.jpg"
+							alt="Pan-seared tenderloin with hand-rolled spätzle"
+							loading="lazy"
+						/>
+					</div>
+					<h3 class="dish-card__title">Pan-Seared Tenderloin</h3>
+					<p class="dish-card__desc">
+						Hand-rolled spätzle, cured venison, aged balsamic.
+					</p>
 				</article>
 			</div>
-			<div class="services__categories">
-				<article class="categories">
-					<img class="icon" src="./restaurant-icon.png" alt="" />
-                    <span class="divider"></span>
-					<h2>Quality Food</h2>
+
+			<div class="dishes-cta reveal">
+				<a class="btn btn--ghost" href="#menu">See The Full Menu</a>
+			</div>
+		</section>
+
+		<section class="services" id="services">
+			<div class="section-heading reveal">
+				<p class="eyebrow">Services</p>
+				<h2>Why Guests Return</h2>
+				<p class="section-heading__sub">
+					We're not the easiest table to reach in Alba County.
+					Here's what makes people come back anyway.
+				</p>
+			</div>
+
+			<div class="services__banner reveal">
+				<img src="./img/story/terrace-breakfast.jpg" alt="Mountain-view terrace at Carpathian Garden" loading="lazy" />
+			</div>
+
+			<div class="services__categories" data-stagger>
+				<article class="categories reveal">
+					<img class="icon" src="./img/icons/restaurant-icon.png" alt="" />
+					<span class="divider"></span>
+					<h3>Quality Food</h3>
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						
+						Every plate is built around what's in season in the
+						valley that week, not what's convenient to ship in.
 					</p>
 				</article>
-				<article class="categories">
-					<img class="icon" src="./staff.png" alt="" />
-                    <span class="divider"></span>
-					<h2>Professional Staff</h2>
+				<article class="categories reveal">
+					<img class="icon" src="./img/icons/staff.png" alt="" />
+					<span class="divider"></span>
+					<h3>Professional Staff</h3>
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						
+						Half our servers have been with us since we opened.
+						They remember how you like your steak.
 					</p>
 				</article>
-				<article class="categories">
-					<img class="icon" src="./nature.png" alt="" />
-                    <span class="divider"></span>
-					<h2>Scenic Location</h2>
+				<article class="categories reveal">
+					<img class="icon" src="./img/icons/nature.png" alt="" />
+					<span class="divider"></span>
+					<h3>Scenic Location</h3>
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						
+						Thirty-eight seats above the tree line, heated
+						year-round, with the same view for lunch or last call.
+					</p>
+				</article>
+				<article class="categories reveal">
+					<svg class="icon icon--svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+						<path d="M7 3h10l-1.2 8.4a3.8 3.8 0 0 1-3.8 3.3v0a3.8 3.8 0 0 1-3.8-3.3L7 3Z" />
+						<path d="M12 14.7V21" />
+						<path d="M8.5 21h7" />
+					</svg>
+					<span class="divider"></span>
+					<h3>Curated Cellar</h3>
+					<p>
+						Two hundred bottles, half of them Romanian, chosen by
+						a sommelier who still works the floor most nights.
 					</p>
 				</article>
 			</div>
 		</section>
 
 		<section class="menu" id="menu">
-			<h1>Discover Our Menu</h1>
-			<div class="menu-selectors">
-				<div class="selector-foods">Foods</div>
-				<div class="selector-drinks">Drinks</div>
+			<div class="section-heading reveal">
+				<p class="eyebrow">Taste</p>
+				<h2>Discover Our Menu</h2>
+				<p class="section-heading__sub">
+					A living menu that changes with the harvest. Here's
+					what's cooking this season.
+				</p>
 			</div>
 
-			<div class="menu-items-container">
-				<div class="food-menu-items">
-					<div class="menu-items">
-						<div class="menu-item-img-container">
-							<img src="./img/foods/grilled-salmon.jpg" alt="" />
+			<div class="menu-tabs-wrap reveal">
+				<div class="menu-tabs" role="tablist" aria-label="Menu categories">
+					<button
+						type="button"
+						class="menu-tab is-active"
+						id="tab-foods"
+						role="tab"
+						aria-selected="true"
+						aria-controls="foods-panel"
+					>
+						Foods
+					</button>
+					<button
+						type="button"
+						class="menu-tab"
+						id="tab-drinks"
+						role="tab"
+						aria-selected="false"
+						aria-controls="drinks-panel"
+					>
+						Drinks
+					</button>
+					<span class="menu-tabs__pill" aria-hidden="true"></span>
+				</div>
+			</div>
+
+			<div class="menu-panels reveal">
+				<div class="menu-grid" id="foods-panel" role="tabpanel" aria-labelledby="tab-foods">
+					<article class="menu-card">
+						<div class="menu-card__img">
+							<img src="./img/foods/grilled-salmon.jpg" alt="Grilled Salmon" loading="lazy" />
 						</div>
-						<h4 class="menu-item-title">Grilled Salmon</h4>
-						<div class="menu-item-info">
-							<h4 class="menu-item-price">$ 19.99</h4>
-							<p class="menu-item-description">300g</p>
+						<div class="menu-card__body">
+							<div class="menu-card__row">
+								<h3 class="menu-card__title">Grilled Salmon</h3>
+								<span class="menu-card__price">$19.99</span>
+							</div>
+							<p class="menu-card__meta">300 g</p>
 						</div>
-					</div>
-					<div class="menu-items">
-						<div class="menu-item-img-container">
-							<img
-								src="./img/foods/pork steak & potatoes.jpg"
-								alt=""
-							/>
+					</article>
+					<article class="menu-card">
+						<div class="menu-card__img">
+							<img src="./img/foods/pork steak & potatoes.jpg" alt="Pork Steak & Potatoes" loading="lazy" />
 						</div>
-						<h4 class="menu-item-title">Pork Steak & Potatoes</h4>
-						<div class="menu-item-info">
-							<h4 class="menu-item-price">$ 14.99</h4>
-							<p class="menu-item-description">600g</p>
+						<div class="menu-card__body">
+							<div class="menu-card__row">
+								<h3 class="menu-card__title">Pork Steak &amp; Potatoes</h3>
+								<span class="menu-card__price">$14.99</span>
+							</div>
+							<p class="menu-card__meta">600 g</p>
 						</div>
-					</div>
-					<div class="menu-items">
-						<div class="menu-item-img-container">
-							<img
-								src="./img/foods/carpathian-burger.jpg"
-								alt=""
-							/>
+					</article>
+					<article class="menu-card">
+						<div class="menu-card__img">
+							<img src="./img/foods/carpathian-burger.jpg" alt="Carpathian Burger" loading="lazy" />
 						</div>
-						<h4 class="menu-item-title">Carpathian Burger</h4>
-						<div class="menu-item-info">
-							<h4 class="menu-item-price">$ 4.99</h4>
-							<p class="menu-item-description">350g</p>
+						<div class="menu-card__body">
+							<div class="menu-card__row">
+								<h3 class="menu-card__title">Carpathian Burger</h3>
+								<span class="menu-card__price">$4.99</span>
+							</div>
+							<p class="menu-card__meta">350 g</p>
 						</div>
-					</div>
-					<div class="menu-items">
-						<div class="menu-item-img-container">
-							<img
-								src="./img/foods/garlic-butter-shrimp.jpg"
-								alt=""
-							/>
+					</article>
+					<article class="menu-card">
+						<div class="menu-card__img">
+							<img src="./img/foods/garlic-butter-shrimp.jpg" alt="Garlic Butter Shrimp" loading="lazy" />
 						</div>
-						<h4 class="menu-item-title">Garlic Butter Shrimp</h4>
-						<div class="menu-item-info">
-							<h4 class="menu-item-price">$ 24.99</h4>
-							<p class="menu-item-description">300g</p>
+						<div class="menu-card__body">
+							<div class="menu-card__row">
+								<h3 class="menu-card__title">Garlic Butter Shrimp</h3>
+								<span class="menu-card__price">$24.99</span>
+							</div>
+							<p class="menu-card__meta">300 g</p>
 						</div>
-					</div>
-					<div class="menu-items">
-						<div class="menu-item-img-container">
-							<img
-								src="./img/foods/stir-fry chicken.jpg"
-								alt=""
-							/>
+					</article>
+					<article class="menu-card">
+						<div class="menu-card__img">
+							<img src="./img/foods/stir-fry chicken.jpg" alt="Stir Fry Chicken" loading="lazy" />
 						</div>
-						<h4 class="menu-item-title">Stir Fry Chicken</h4>
-						<div class="menu-item-info">
-							<h4 class="menu-item-price">$ 9.99</h4>
-							<p class="menu-item-description">300g</p>
+						<div class="menu-card__body">
+							<div class="menu-card__row">
+								<h3 class="menu-card__title">Stir Fry Chicken</h3>
+								<span class="menu-card__price">$9.99</span>
+							</div>
+							<p class="menu-card__meta">300 g</p>
 						</div>
-					</div>
-					<div class="menu-items">
-						<div class="menu-item-img-container">
-							<img
-								src="./img/foods/carpathian-pasta.jpg"
-								alt=""
-							/>
+					</article>
+					<article class="menu-card">
+						<div class="menu-card__img">
+							<img src="./img/foods/carpathian-pasta.jpg" alt="Carpathian Pasta" loading="lazy" />
 						</div>
-						<h4 class="menu-item-title">Carpathian Pasta</h4>
-						<div class="menu-item-info">
-							<h4 class="menu-item-price">$ 9.99</h4>
-							<p class="menu-item-description">250g</p>
+						<div class="menu-card__body">
+							<div class="menu-card__row">
+								<h3 class="menu-card__title">Carpathian Pasta</h3>
+								<span class="menu-card__price">$9.99</span>
+							</div>
+							<p class="menu-card__meta">250 g</p>
 						</div>
-					</div>
-					<div class="menu-items">
-						<div class="menu-item-img-container">
-							<img src="./img/foods/grilled-ribeye.jpg" alt="" />
+					</article>
+					<article class="menu-card">
+						<div class="menu-card__img">
+							<img src="./img/foods/grilled-ribeye.jpg" alt="Grilled Ribeye" loading="lazy" />
 						</div>
-						<h4 class="menu-item-title">Grilled Ribeye</h4>
-						<div class="menu-item-info">
-							<h4 class="menu-item-price">$ 19.99</h4>
-							<p class="menu-item-description">350g</p>
+						<div class="menu-card__body">
+							<div class="menu-card__row">
+								<h3 class="menu-card__title">Grilled Ribeye</h3>
+								<span class="menu-card__price">$19.99</span>
+							</div>
+							<p class="menu-card__meta">350 g</p>
 						</div>
-					</div>
-					<div class="menu-items">
-						<div class="menu-item-img-container">
-							<img src="./img/foods/miso-salmon.jpg" alt="" />
+					</article>
+					<article class="menu-card">
+						<div class="menu-card__img">
+							<img src="./img/foods/miso-salmon.jpg" alt="Miso Salmon" loading="lazy" />
 						</div>
-						<h4 class="menu-item-title">Miso Salmon</h4>
-						<div class="menu-item-info">
-							<h4 class="menu-item-price">$ 21.99</h4>
-							<p class="menu-item-description">500g</p>
+						<div class="menu-card__body">
+							<div class="menu-card__row">
+								<h3 class="menu-card__title">Miso Salmon</h3>
+								<span class="menu-card__price">$21.99</span>
+							</div>
+							<p class="menu-card__meta">500 g</p>
 						</div>
-					</div>
+					</article>
 				</div>
 
-				<div class="drink-menu-items">
-
-                    <div class="menu-items">
-						<div class="menu-item-img-container">
-							<img src="./img/drinks/Carpathian Royale.webp" alt="" />
+				<div class="menu-grid is-hidden" id="drinks-panel" role="tabpanel" aria-labelledby="tab-drinks">
+					<article class="menu-card">
+						<div class="menu-card__img">
+							<img src="./img/drinks/Carpathian Royale.webp" alt="Carpathian Royale" loading="lazy" />
 						</div>
-						<h4 class="menu-item-title">Carpathian Royale</h4>
-						<div class="menu-item-info">
-							<h4 class="menu-item-price">$ 14.99</h4>
-							<p class="menu-item-description">12%</p>
+						<div class="menu-card__body">
+							<div class="menu-card__row">
+								<h3 class="menu-card__title">Carpathian Royale</h3>
+								<span class="menu-card__price">$14.99</span>
+							</div>
+							<p class="menu-card__meta">12% ABV</p>
 						</div>
-					</div>
-
-                    <div class="menu-items">
-						<div class="menu-item-img-container">
-							<img src="./img/drinks/french-75.webp" alt="" />
+					</article>
+					<article class="menu-card">
+						<div class="menu-card__img">
+							<img src="./img/drinks/french-75.webp" alt="French '75" loading="lazy" />
 						</div>
-						<h4 class="menu-item-title">French '75</h4>
-						<div class="menu-item-info">
-							<h4 class="menu-item-price">$ 6.99</h4>
-							<p class="menu-item-description">11%</p>
+						<div class="menu-card__body">
+							<div class="menu-card__row">
+								<h3 class="menu-card__title">French '75</h3>
+								<span class="menu-card__price">$6.99</span>
+							</div>
+							<p class="menu-card__meta">11% ABV</p>
 						</div>
-					</div>
-
-                    <div class="menu-items">
-						<div class="menu-item-img-container">
-							<img src="./img/drinks/Gin-and-Tonic-007.webp" alt="" />
+					</article>
+					<article class="menu-card">
+						<div class="menu-card__img">
+							<img src="./img/drinks/Gin-and-Tonic-007.webp" alt="Gin & Tonic" loading="lazy" />
 						</div>
-						<h4 class="menu-item-title">Gin & Tonic</h4>
-						<div class="menu-item-info">
-							<h4 class="menu-item-price">$ 8.99</h4>
-							<p class="menu-item-description">15%</p>
+						<div class="menu-card__body">
+							<div class="menu-card__row">
+								<h3 class="menu-card__title">Gin &amp; Tonic</h3>
+								<span class="menu-card__price">$8.99</span>
+							</div>
+							<p class="menu-card__meta">15% ABV</p>
 						</div>
-					</div>
-
-                    <div class="menu-items">
-						<div class="menu-item-img-container">
-							<img src="./img/drinks/manhattan-cocktail.webp" alt="" />
+					</article>
+					<article class="menu-card">
+						<div class="menu-card__img">
+							<img src="./img/drinks/manhattan-cocktail.webp" alt="Manhattan Cocktail" loading="lazy" />
 						</div>
-						<h4 class="menu-item-title">Manhattan Cocktail</h4>
-						<div class="menu-item-info">
-							<h4 class="menu-item-price">$ 12.99</h4>
-							<p class="menu-item-description">13%</p>
+						<div class="menu-card__body">
+							<div class="menu-card__row">
+								<h3 class="menu-card__title">Manhattan Cocktail</h3>
+								<span class="menu-card__price">$12.99</span>
+							</div>
+							<p class="menu-card__meta">13% ABV</p>
 						</div>
-					</div>
-
-                    <div class="menu-items">
-						<div class="menu-item-img-container">
-							<img src="./img/drinks/paloma.webp" alt="" />
+					</article>
+					<article class="menu-card">
+						<div class="menu-card__img">
+							<img src="./img/drinks/paloma.webp" alt="Paloma" loading="lazy" />
 						</div>
-						<h4 class="menu-item-title">Paloma</h4>
-						<div class="menu-item-info">
-							<h4 class="menu-item-price">$ 7.99</h4>
-							<p class="menu-item-description">18%</p>
+						<div class="menu-card__body">
+							<div class="menu-card__row">
+								<h3 class="menu-card__title">Paloma</h3>
+								<span class="menu-card__price">$7.99</span>
+							</div>
+							<p class="menu-card__meta">18% ABV</p>
 						</div>
-					</div>
-
-                    <div class="menu-items">
-						<div class="menu-item-img-container">
-							<img src="./img/drinks/pina-colada.webp" alt="" />
+					</article>
+					<article class="menu-card">
+						<div class="menu-card__img">
+							<img src="./img/drinks/pina-colada.webp" alt="Pina Colada" loading="lazy" />
 						</div>
-						<h4 class="menu-item-title">Pina Colada</h4>
-						<div class="menu-item-info">
-							<h4 class="menu-item-price">$ 12.99</h4>
-							<p class="menu-item-description">9%</p>
+						<div class="menu-card__body">
+							<div class="menu-card__row">
+								<h3 class="menu-card__title">Pina Colada</h3>
+								<span class="menu-card__price">$12.99</span>
+							</div>
+							<p class="menu-card__meta">9% ABV</p>
 						</div>
-					</div>
-
-                    <div class="menu-items">
-						<div class="menu-item-img-container">
-							<img src="./img/drinks/southside.webp" alt="" />
+					</article>
+					<article class="menu-card">
+						<div class="menu-card__img">
+							<img src="./img/drinks/southside.webp" alt="Southside" loading="lazy" />
 						</div>
-						<h4 class="menu-item-title">Southside</h4>
-						<div class="menu-item-info">
-							<h4 class="menu-item-price">$ 11.99</h4>
-							<p class="menu-item-description">15%</p>
+						<div class="menu-card__body">
+							<div class="menu-card__row">
+								<h3 class="menu-card__title">Southside</h3>
+								<span class="menu-card__price">$11.99</span>
+							</div>
+							<p class="menu-card__meta">15% ABV</p>
 						</div>
-					</div>
-
-                    <div class="menu-items">
-						<div class="menu-item-img-container">
-							<img src="./img/drinks/tom-collins-cocktail.webp" alt="" />
+					</article>
+					<article class="menu-card">
+						<div class="menu-card__img">
+							<img src="./img/drinks/tom-collins-cocktail.webp" alt="Tom Collins Cocktail" loading="lazy" />
 						</div>
-						<h4 class="menu-item-title">Tom Collins Cocktail</h4>
-						<div class="menu-item-info">
-							<h4 class="menu-item-price">$ 18.99</h4>
-							<p class="menu-item-description">17%</p>
+						<div class="menu-card__body">
+							<div class="menu-card__row">
+								<h3 class="menu-card__title">Tom Collins</h3>
+								<span class="menu-card__price">$18.99</span>
+							</div>
+							<p class="menu-card__meta">17% ABV</p>
 						</div>
-					</div>
-					
+					</article>
 				</div>
+			</div>
+		</section>
+
+		<section class="testimonials" id="testimonials">
+			<div class="section-heading reveal">
+				<p class="eyebrow">Guests</p>
+				<h2>What People Are Saying</h2>
+			</div>
+			<div class="testimonials-grid" data-stagger>
+				<article class="testimonial-card reveal">
+					<div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+					<p class="testimonial-card__quote">
+						"Best meal I've had in Transylvania, full stop. The
+						fillet alone is worth the drive."
+					</p>
+					<div class="testimonial-card__author">
+						<img class="testimonial-card__avatar" src="./img/people/reviewer-1.jpg" alt="" loading="lazy" />
+						<div>
+							<span class="testimonial-card__name">Andra P.</span>
+							<span class="testimonial-card__loc">Cluj-Napoca</span>
+						</div>
+					</div>
+				</article>
+				<article class="testimonial-card reveal">
+					<div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+					<p class="testimonial-card__quote">
+						"We came for a birthday dinner and stayed three hours.
+						Nobody rushed us once."
+					</p>
+					<div class="testimonial-card__author">
+						<img class="testimonial-card__avatar" src="./img/people/reviewer-2.jpg" alt="" loading="lazy" />
+						<div>
+							<span class="testimonial-card__name">Mihai D.</span>
+							<span class="testimonial-card__loc">Sibiu</span>
+						</div>
+					</div>
+				</article>
+				<article class="testimonial-card reveal">
+					<div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+					<p class="testimonial-card__quote">
+						"The terrace at sunset is the most romantic spot in
+						Alba County. Also, the wine list is criminally good."
+					</p>
+					<div class="testimonial-card__author">
+						<img class="testimonial-card__avatar" src="./img/people/reviewer-3.jpg" alt="" loading="lazy" />
+						<div>
+							<span class="testimonial-card__name">Radu T.</span>
+							<span class="testimonial-card__loc">Bucharest</span>
+						</div>
+					</div>
+				</article>
 			</div>
 		</section>
 
 		<section class="book" id="book">
-			<h3>Reservations</h3>
-			<h1>Book A Table</h1>
-			<form>
-				<div class="row">
-					<select class="form-field" id="persons" name="persons">
-						<option value="1">1 Person</option>
-						<option value="2">2 Persons</option>
-						<option value="3">3 Persons</option>
-						<option value="4">4 Persons</option>
-					</select>
-
-					<input
-						class="form-field"
-						type="date"
-						id="dateInput"
-						name="date"
-					/>
-
-					<input
-						class="form-field"
-						type="time"
-						id="timeInput"
-						name="time"
-					/>
+			<div class="book-inner">
+				<div class="book-image reveal">
+					<img src="./img/story/signature-steak-polenta.jpg" alt="" loading="lazy" />
 				</div>
+				<div class="book-form reveal">
+					<p class="eyebrow">Reservations</p>
+					<h2>Book A Table</h2>
+					<p class="book-form__sub">
+						Tables turn over slowly here; we'd rather you stay.
+						Reserve ahead, especially for terrace seating.
+					</p>
+					<form>
+						<div class="form-grid">
+							<div class="form-group">
+								<label for="persons">Party size</label>
+								<select class="form-field" id="persons" name="persons">
+									<option value="1">1 person</option>
+									<option value="2" selected>2 persons</option>
+									<option value="3">3 persons</option>
+									<option value="4">4 persons</option>
+								</select>
+							</div>
 
-				<input
-					class="email-field"
-					type="email"
-					id="email"
-					name="email"
-					placeholder="Your e-mail here"
-				/>
+							<div class="form-group">
+								<label for="dateInput">Date</label>
+								<input
+									class="form-field"
+									type="date"
+									id="dateInput"
+									name="date"
+								/>
+							</div>
 
-				<button class="book-btn" type="submit">Make Reservation</button>
-			</form>
-		</section>
+							<div class="form-group">
+								<label for="timeInput">Time</label>
+								<input
+									class="form-field"
+									type="time"
+									id="timeInput"
+									name="time"
+								/>
+							</div>
 
-		<div class="book-table-img">
-			<img src="./table.png" alt="" />
-		</div>
+							<div class="form-group form-group--full">
+								<label for="email">Email</label>
+								<input
+									class="form-field"
+									type="email"
+									id="email"
+									name="email"
+									placeholder="you@example.com"
+									autocomplete="email"
+									required
+								/>
+							</div>
+						</div>
 
-		<footer id="contact">
-			<div class="footer-container">
-				<h4 class="footer-item">Contact Us</h4>
-				<div class="footer-logo footer-item">
-					<img src="./logo-green.png" alt="" />
-				</div>
-				<h4 class="footer-item">Working Hours</h4>
-
-				<address class="footer-item contact">
-					<p>123 Michael The Brave St., Alba Iulia, Romania</p>
-					<p>0358 654 321</p>
-					<p>0358 123 456</p>
-					<!-- You can add more contact information here if needed -->
-				</address>
-
-				<div class="footer-item quote">
-					<blockquote>
-						<p>
-							"The best way to find yourself is to lose yourself
-							in the service of others.”
-						</p>
-						<cite>— Kevin Luo —</cite>
-					</blockquote>
-					<div class="footer-icons">
-						<img src="./facebook.png" alt="" />
-						<img src="./twitter.png" alt="" />
-						<img src="./instagram.png" alt="" />
-					</div>
-				</div>
-
-				<div class="footer-item working-hours">
-					<div class="work-hours-week">
-						<p>Monday - Friday:</p>
-						<p>08:00 AM - 11:00 PM</p>
-					</div>
-					<div class="work-hours-weekend">
-						<p>Saturday - Sunday:</p>
-						<p>11:00 AM - 11:00 PM</p>
+						<button class="btn btn--primary book-btn" type="submit">Confirm Reservation</button>
+					</form>
+					<div class="book-form__quick">
+						<span>
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+							0358 654 321
+						</span>
+						<span>
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+							Mon-Fri 08:00-23:00 · Sat-Sun 11:00-23:00
+						</span>
 					</div>
 				</div>
 			</div>
+		</section>
+
+		<footer id="contact">
+			<div class="footer-container">
+				<div class="footer-item footer-brand">
+					<img src="./img/brand/logo-green.png" alt="Carpathian Garden logo" loading="lazy" />
+					<p>
+						Seasonal, ingredient-led cooking on a mountain terrace
+						above Alba Iulia.
+					</p>
+					<div class="footer-icons">
+						<a href="https://facebook.com/carpathiangarden" aria-label="Carpathian Garden on Facebook">
+							<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+						</a>
+						<a href="https://x.com/carpathiangarden" aria-label="Carpathian Garden on X">
+							<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+						</a>
+						<a href="https://instagram.com/carpathiangarden" aria-label="Carpathian Garden on Instagram">
+							<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+						</a>
+					</div>
+				</div>
+
+				<div class="footer-item footer-links">
+					<h3>Quick Links</h3>
+					<a href="#about-us">Our Story</a>
+					<a href="#services">Why Us</a>
+					<a href="#menu">Menu</a>
+					<a href="#book">Reservations</a>
+				</div>
+
+				<div class="footer-item footer-contact">
+					<h3>Contact Us</h3>
+					<address>
+						<p>123 Michael The Brave St., Alba Iulia, Romania</p>
+						<p>0358 654 321</p>
+						<p>0358 123 456</p>
+					</address>
+				</div>
+
+				<div class="footer-item footer-hours">
+					<h3>Working Hours</h3>
+					<div class="work-hours-week">
+						<p>Monday to Friday</p>
+						<p>08:00 - 23:00</p>
+					</div>
+					<div class="work-hours-weekend">
+						<p>Saturday and Sunday</p>
+						<p>11:00 - 23:00</p>
+					</div>
+				</div>
+			</div>
+			<div class="footer-quote">
+				<blockquote>
+					<p>
+						"The best way to find yourself is to lose yourself in
+						the service of others."
+					</p>
+					<cite>Kevin Luo</cite>
+				</blockquote>
+			</div>
 			<p class="copyright">
-				&copy; 2023 Carpathian Garden. All rights reserved.
+				&copy; 2026 Carpathian Garden. All rights reserved.
 			</p>
 		</footer>
 
-		<script src="script.js"></script>
+		<script src="./js/script.js"></script>
 	</body>
 </html>
